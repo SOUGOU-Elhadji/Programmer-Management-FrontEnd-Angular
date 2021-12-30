@@ -1,0 +1,42 @@
+<div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingOne" style="text-align: center">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        All Programmers
+      </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+            <div class="accordion-body">
+                <strong style="text-align: center;">This is the first item's accordion body.</strong>
+
+                <input style="width: 20%;" class="form-control me-2" [(ngModel)]="lastName" (input)="search()" type="text" placeholder="Search " aria-label="Search " />
+
+                <hr>
+                <table class="table ">
+                    <thead>
+                        <tr>
+                            <th scope="col ">Id</th>
+                            <th scope="col ">First Name</th>
+                            <th scope="col ">Last Name</th>
+                            <th scope="col ">Email</th>
+                            <th scope="col-2 ">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let programmer of programmers ">
+                            <th scope="row ">{{ programmer.id }}</th>
+                            <td>{{ programmer.firstName }}</td>
+                            <td>{{ programmer.lastName }}</td>
+                            <td>{{ programmer.email }}</td>
+                            <td>
+                                <button (click)="deleteProgrammer(programmer.id) " class="btn btn-danger ">Delete</button>&nbsp;
+                                <button (click)="programmerDetails(programmer.id) " class="btn btn-info ">Details</button>&nbsp;
+                                <button (click)="updateProgrammer(programmer.id) " class="btn btn-success ">Update</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
